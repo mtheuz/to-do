@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import todoList from './components/todoList/todoList'
+import TodoList from './components/todoList/todoList'
 
 function App() {
   const[todo,setTodo] = useState([
@@ -26,7 +26,17 @@ function App() {
         <h1>TO-DO-LIST</h1>
       </div>
       <div className="container">
-        <todoList todo={todo}/>
+        <div className="pesquisa">
+          <p>PESQUISA</p>
+          <input className='input-pesquisa' type="text" />
+            <select className='select-options'>
+              <option value="Trabalho">Trabalho</option>
+              <option value="Estudo">Estudo</option>
+              <option value="Pessoal">Pessoal</option>
+            </select>
+        </div>
+       
+        <TodoList todo={todo}/>
       </div>
     </>
   )

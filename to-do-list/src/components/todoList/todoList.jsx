@@ -1,13 +1,20 @@
 import React from 'react'
 import './style.css'
-const todoList = ({todo}) => {
+const TodoList = ({todo}) => {
   return (
     <div className="todoList">
           {
             todo.map((todo)=>
             <div className="content">
-              <p>{todo.descricao}</p>
-              <p>{todo.categoria}</p>
+              <div className='info'>
+                <p>{todo.descricao}</p>
+                <p>{todo.categoria}</p>
+              </div>
+              <div className='buttons'>
+                <button>X</button>
+                <button>V</button>
+              </div>
+              
             </div>
             )
           }
@@ -16,4 +23,4 @@ const todoList = ({todo}) => {
   )
 }
 
-export default todoList
+export default TodoList

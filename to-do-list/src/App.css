@@ -3,12 +3,14 @@
 *{
   margin: 0;
   padding: 0;
-  background-color: #4B0082;
+  
   font-family: 'Poppins', sans-serif;
+  
 
 }
 body{
   display: flex;
+  background-color: #4B0082;
   justify-content: center;
   align-items: center;
   
@@ -26,6 +28,43 @@ body{
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   margin-bottom: 100px;
+  
+}
 
+.input-pesquisa{
+  width: 500px;
+  background-color: #fff;
+  border-radius: 5px;
+  border-color: wheat;
+  color: black;
+  padding: 5px 5px;
+}
+.input-pesquisa:focus{
+  outline: none;
 
+}
+.select-options{
+  background-color: #fff;
+  border-radius: 5px;
+  border-color: wheat;
+  color: black;
+  padding: 5px 5px;
+}
+.select-options:focus{
+  outline: none;
+  background-color: #8A2BE2;
+  color: #fff;
+}
+select option:hover{
+  background-color: black;
+}
+.pesquisa{
+  display: flex;
+    width: auto;
+    margin: 10px 10px;
+    height: 90px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    align-items: center;
 }

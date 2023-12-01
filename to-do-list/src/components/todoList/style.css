@@ -1,5 +1,20 @@
 .content{
-    width: 860px;
+    display: flex;
+    width: auto;
+    margin: 10px 10px;
     height: 90px;
     background-color: #4B0082;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.info{
+    margin-left: 30px;
+}
+
+.buttons{
+    margin-right: 30px;
 }
