@@ -8,7 +8,10 @@ const TodoList = ({todo}) => {
             <div className="content">
               <div className='info'>
                 <p>{todo.descricao}</p>
-                <p>{todo.categoria}</p>
+                <div>
+                  
+                </div>
+                <p className='categoria'>{todo.categoria}</p>
               </div>
               <div className='buttons'>
                 <button>X</button>

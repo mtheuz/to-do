@@ -5,7 +5,7 @@ import TodoList from './components/todoList/todoList'
 function App() {
   const[todo,setTodo] = useState([
     {id: 1,
-      descricao: "Fazer almoço",
+      descricao: "Fazer almoco",
       categoria: "Estudo",
       situacao: false
     },
@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <div className="title">
-        <h1>TO-DO-LIST</h1>
+        <h1>TO-DO LIST</h1>
       </div>
       <div className="container">
         <div className="pesquisa">

@@ -18,3 +18,10 @@
 .buttons{
     margin-right: 30px;
 }
+.categoria{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2px;
+    color: #4B0082;
+    border: 1px red solid;
+}
