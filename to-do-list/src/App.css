@@ -3,10 +3,8 @@
 *{
   margin: 0;
   padding: 0;
-  
   font-family: 'Poppins', sans-serif;
-  
-
+  box-sizing: border-box;
 }
 body{
   display: flex;
@@ -19,25 +17,26 @@ body{
   text-align: center;
   font-size: 12px;
   font-weight: 1000;
-  padding: 40px;
+  padding: 20px;
 }
 .container{
   width: 823px;
-  height: 676px;
+  height: auto;
   background-color: #8A2BE2;
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   margin-bottom: 100px;
-  
 }
 
 .input-pesquisa{
+  display: flex;
   width: 500px;
   background-color: #fff;
   border-radius: 5px;
   border-color: wheat;
   color: #4B0082;
   padding: 5px 5px;
+ 
 }
 .input-pesquisa:focus{
   outline: none;
@@ -67,4 +66,22 @@ select option:hover{
     margin-bottom: 10px;
     border-radius: 10px;
     align-items: center;
+    gap: 10px;
+}
+.titulo-pesquisa{
+  background-color: #4B0082;
+  border-radius: 10px;
+  padding: 5px;
+}
+body::-webkit-scrollbar{
+  width: 10px;
+}
+body::-webkit-scrollbar-track{
+  background-color: #fff;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: #8A2BE2;
+  border-radius: 10px;
+
 }

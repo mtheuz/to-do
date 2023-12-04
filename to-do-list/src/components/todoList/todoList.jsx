@@ -1,5 +1,7 @@
 import React from 'react'
 import './style.css'
+import { FaWindowClose } from "react-icons/fa";
+import { FaCheckSquare } from "react-icons/fa";
 const TodoList = ({todo}) => {
   return (
     <div className="todoList">
@@ -14,8 +16,8 @@ const TodoList = ({todo}) => {
                 <p className='categoria'>{todo.categoria}</p>
               </div>
               <div className='buttons'>
-                <button>X</button>
-                <button>V</button>
+                <button className='button-options'><FaCheckSquare  color='#00FF00' size={25}/></button>
+                <button className='button-options'><FaWindowClose color='#FF0000' size={25}/></button>
               </div>
               
             </div>

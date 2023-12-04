@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import './App.css'
-import TodoList from './components/todoList/todoList'
+import TodoList from './components/todoList/TodoList'
+import TodoForm from './components/TodoForm/TodoForm'
+
+
 
 function App() {
   const[todo,setTodo] = useState([
@@ -18,26 +21,41 @@ function App() {
       descricao: "fazer task",
       categoria: "Trabalho",
       situacao: false
-    },
+    }
   ])
+  const adicionarTarefa = (categoria, valor) =>{
+
+    const novasTarefas = [...todo,
+    {id: Math.floor(Math.random() * 1000),
+      descricao: valor,
+      categoria: categoria,
+      situacao: false
+    }
+    ];
+    setTodo(novasTarefas)
+  }
   return (
     <>
       <div className="title">
         <h1>TO-DO LIST</h1>
       </div>
       <div className="container">
-        <div className="pesquisa">
-          <p>PESQUISA</p>
-          <input className='input-pesquisa' type="text" />
+        <div>
+          <div className="pesquisa">
+          <p className='titulo-pesquisa'>PESQUISA</p>
+          <input className='input-pesquisa' type="text" placeholder='Digite o titulo'/>
             <select className='select-options'>
               <option value="Trabalho">Trabalho</option>
               <option value="Estudo">Estudo</option>
               <option value="Pessoal">Pessoal</option>
             </select>
+          </div>
         </div>
        
-        <TodoList todo={todo}/>
+        <TodoList todo={todo} key={todo.id}/>
+        <TodoForm adicionarTarefa={adicionarTarefa}/>
       </div>
+      
     </>
   )
 }
