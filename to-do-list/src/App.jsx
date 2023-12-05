@@ -2,10 +2,13 @@ import { useState } from 'react'
 import './App.css'
 import TodoList from './components/todoList/TodoList'
 import TodoForm from './components/TodoForm/TodoForm'
+import Pesquisa from './components/Pesquisa/Pesquisa'
 
 
 
 function App() {
+  const[pesquisa,setPesquisa] = useState('')
+  const[escolhaCategoria, setEscolhaCategoria] = useState('')
   const[todo,setTodo] = useState([
     {id: 1,
       descricao: "Fazer almoco",
@@ -23,6 +26,7 @@ function App() {
       situacao: false
     }
   ])
+  
   const adicionarTarefa = (categoria, valor) =>{
 
     const novasTarefas = [...todo,
@@ -34,6 +38,20 @@ function App() {
     ];
     setTodo(novasTarefas)
   }
+
+  const removerTarefa = (id) =>{
+    const novasTarefas = [...todo]
+    const filtroTarefas = novasTarefas.filter((tarefa) => tarefa.id != id ? tarefa : null)
+    setTodo(filtroTarefas)
+
+  }
+  const completarTarefa = (id) =>{
+    const novasTarefas = [...todo]
+    novasTarefas.map((tarefa) => tarefa.id == id ? (tarefa.situacao = !tarefa.situacao) : todo)
+    setTodo(novasTarefas)
+
+  }
+
   return (
     <>
       <div className="title">
@@ -41,19 +59,16 @@ function App() {
       </div>
       <div className="container">
         <div>
-          <div className="pesquisa">
-          <p className='titulo-pesquisa'>PESQUISA</p>
-          <input className='input-pesquisa' type="text" placeholder='Digite o titulo'/>
-            <select className='select-options'>
-              <option value="Trabalho">Trabalho</option>
-              <option value="Estudo">Estudo</option>
-              <option value="Pessoal">Pessoal</option>
-            </select>
-          </div>
+          <Pesquisa pesquisa={pesquisa} setPesquisa={setPesquisa} categoria={escolhaCategoria} setEscolhaCategoria={setEscolhaCategoria}/>
         </div>
-       
-        <TodoList todo={todo} key={todo.id}/>
-        <TodoForm adicionarTarefa={adicionarTarefa}/>
+        <TodoList 
+        todo={todo} 
+        key={todo.id} 
+        removerTarefa={removerTarefa} 
+        completarTarefa={completarTarefa}
+        pesquisa={pesquisa}
+        />
+        <TodoForm adicionarTarefa={adicionarTarefa} />
       </div>
       
     </>

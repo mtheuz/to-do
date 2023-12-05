@@ -28,51 +28,6 @@ body{
   margin-bottom: 100px;
 }
 
-.input-pesquisa{
-  display: flex;
-  width: 500px;
-  background-color: #fff;
-  border-radius: 5px;
-  border-color: wheat;
-  color: #4B0082;
-  padding: 5px 5px;
- 
-}
-.input-pesquisa:focus{
-  outline: none;
-
-}
-.select-options{
-  background-color: #fff;
-  border-radius: 5px;
-  border-color: wheat;
-  color: black;
-  padding: 5px 5px;
-}
-.select-options:focus{
-  outline: none;
-  background-color: #8A2BE2;
-  color: #fff;
-}
-select option:hover{
-  background-color: black;
-}
-.pesquisa{
-  display: flex;
-    width: auto;
-    margin: 10px 10px;
-    height: 90px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    align-items: center;
-    gap: 10px;
-}
-.titulo-pesquisa{
-  background-color: #4B0082;
-  border-radius: 10px;
-  padding: 5px;
-}
 body::-webkit-scrollbar{
   width: 10px;
 }
