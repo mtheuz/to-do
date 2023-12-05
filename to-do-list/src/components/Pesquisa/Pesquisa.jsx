@@ -14,7 +14,7 @@ function Pesquisa({pesquisa, setPesquisa, setEscolhaCategoria, categoria}) {
             <select 
             className='select-options' 
             value={categoria}
-            onChange={(e)=> setEscolhaCategoria(e.target.value)}
+            onChange={(e)=> {setEscolhaCategoria(e.target.value) }}
             >
               <option value="">Selecione a categoria</option>
               <option value="Trabalho">Trabalho</option>

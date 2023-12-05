@@ -2,24 +2,24 @@ import React from 'react'
 import './style.css'
 import { FaWindowClose } from "react-icons/fa";
 import { FaCheckSquare } from "react-icons/fa";
-const TodoList = ({todo, removerTarefa, completarTarefa,pesquisa}) => {
+const TodoList = ({todo, removerTarefa, completarTarefa,pesquisa, categoria}) => {
   return (
     <div className="todoList">
           {
             todo
-            .filter((todo) => todo.descricao.toLowerCase().includes(pesquisa.toLowerCase()))
+            .filter((tarefa) => tarefa.descricao.toLowerCase().includes(pesquisa.toLowerCase()) &&
+                (categoria === "" || tarefa.categoria === categoria))
             .map((todo)=>
-            <div className="content" style={{backgroundColor: todo.situcao? "green" : ""}}>
+            <div className="content" >
               <div className='info'>
-                <p>{todo.descricao}</p>
+                <p style={{textDecoration: todo.situacao? "line-through" : ""}}>{todo.descricao}</p>
                 <div>
-                  
                 </div>
                 <p className='categoria'>{todo.categoria}</p>
               </div>
               <div className='buttons'>
-                <button className='button-options'><FaCheckSquare  color='#00FF00' size={25} onClick={() => completarTarefa(todo.id)}/></button>
-                <button className='button-options'><FaWindowClose color='#FF0000' size={25} onClick={() => removerTarefa(todo.id)}/></button>
+                <button className='button-options' onClick={() => completarTarefa(todo.id)}><FaCheckSquare  color='#00FF00' size={25} /></button>
+                <button className='button-options' onClick={() => removerTarefa(todo.id)}><FaWindowClose color='#FF0000' size={25} /></button>
               </div>
               
             </div>

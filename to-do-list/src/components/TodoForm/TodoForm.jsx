@@ -19,8 +19,9 @@ function TodoForm({adicionarTarefa}) {
         <form onSubmit={handlesubmit}>
         <h1 className='titulo'>Crie sua tarefa</h1>
         <div className="containerForm">
+
           <input className='input-pesquisa' value={valorTarefa} type="text" onChange={(e) => setValorTarefa(e.target.value)}/>
-            <select className='select-options' value={categoria}onChange={(e) => setCategoria(e.target.value)}>
+            <select className='select-options' value={categoria} onChange={(e) => setCategoria(e.target.value)}>
               <option value="">Selecione a categoria</option>
               <option value="Trabalho">Trabalho</option>
               <option value="Estudo">Estudo</option>

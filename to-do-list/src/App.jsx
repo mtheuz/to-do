@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import './App.css'
-import TodoList from './components/todoList/TodoList'
+import TodoList from './components/TodoList/TodoList'
 import TodoForm from './components/TodoForm/TodoForm'
 import Pesquisa from './components/Pesquisa/Pesquisa'
 
 
 
 function App() {
-  const[pesquisa,setPesquisa] = useState('')
-  const[escolhaCategoria, setEscolhaCategoria] = useState('')
+  const[pesquisa,setPesquisa] = useState(" ")
+  const[escolhaCategoria, setEscolhaCategoria] = useState(" ")
   const[todo,setTodo] = useState([
     {id: 1,
       descricao: "Fazer almoco",
@@ -67,6 +67,7 @@ function App() {
         removerTarefa={removerTarefa} 
         completarTarefa={completarTarefa}
         pesquisa={pesquisa}
+        categoria={escolhaCategoria}
         />
         <TodoForm adicionarTarefa={adicionarTarefa} />
       </div>
